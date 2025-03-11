@@ -1,1 +1,143 @@
-<!-- PLACEHOLDER -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForesightGPT - Prediction Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="site-data/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="site-data/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="site-data/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="site-data/favicon-16x16.png">
+    <link rel="manifest" href="site-data/site.webmanifest">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <i class="fas fa-chart-line"></i> ForesightGPT
+        </h1>
+        <p class="tagline">Make predictions with the power of AI</p>
+      </header>
+      <section class="api-section">
+        <div class="card">
+          <h2>
+            <i class="fas fa-key"></i> API Configuration
+          </h2>
+          <div class="form-group">
+            <label for="apiKey">OpenAI API Key:</label>
+            <div class="api-input-container">
+              <input type="password" id="apiKey" placeholder="Enter your OpenAI API Key">
+              <div class="api-buttons">
+                <button id="toggleApiKey" class="toggle-btn" title="Toggle visibility">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button id="saveApiKey" class="action-btn save-btn" title="Save API Key">
+                  <i class="fas fa-save"></i>
+                </button>
+                <button id="deleteApiKey" class="action-btn delete-btn" title="Delete Saved API Key">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            <p class="helper-text">
+              <i class="fas fa-info-circle"></i> Your API key is stored locally in your browser. We don't collect or store your API key on any servers.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="modelSelection">OpenAI Model:</label>
+            <select id="modelSelection">
+              <option value="gpt-4">GPT-4</option>
+              <option value="gpt-4-turbo">GPT-4 Turbo</option>
+              <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+            </select>
+            <p class="helper-text">
+              <i class="fas fa-info-circle"></i> Choose the model that best fits your needs. GPT-4 provides the most accurate predictions but costs more. GPT-3.5 Turbo is faster and more cost-effective.
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="predictionQuestion">What do you want to predict?</label>
+            <textarea id="predictionQuestion" placeholder="E.g., What is the likelihood of rain tomorrow in New York?"></textarea>
+          </div>
+        </div>
+      </section>
+      <section class="parameters-section">
+        <div class="card">
+          <div class="card-header">
+            <h2>
+              <i class="fas fa-sliders-h"></i> Parameters
+            </h2>
+            <button id="addParameter" class="btn-add">
+              <i class="fas fa-plus"></i> Add Parameter </button>
+          </div>
+          <div id="parametersContainer">
+            <!-- Parameters will be added here -->
+          </div>
+          <div class="form-group helper-container">
+            <div class="helper-item">
+              <i class="fas fa-tag"></i>
+              <strong>Parameter Name:</strong> Name of the factor affecting the prediction
+            </div>
+            <div class="helper-item">
+              <i class="fas fa-arrows-alt-h"></i>
+              <strong>Min/Max Value:</strong> Range of possible values
+            </div>
+            <div class="helper-item">
+              <i class="fas fa-weight-hanging"></i>
+              <strong>Weight (1-10):</strong> Importance of this parameter
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="actions-section">
+        <button id="generatePrediction" class="btn-primary">
+          <i class="fas fa-magic"></i> Generate Prediction </button>
+      </section>
+      <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="card">
+          <h2>
+            <i class="fas fa-chart-pie"></i> Prediction Results
+          </h2>
+          <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Generating predictions...</p>
+          </div>
+          <div id="resultsContainer" style="display: none;">
+            <div class="charts-container">
+              <div class="chart-item">
+                <h3>Outcome Probabilities</h3>
+                <div class="chart-container">
+                  <canvas id="probabilityChart"></canvas>
+                </div>
+              </div>
+              <div class="chart-item">
+                <h3>Confidence Level</h3>
+                <div class="chart-container">
+                  <canvas id="confidenceChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="prediction-details">
+              <h3>Detailed Analysis</h3>
+              <div id="predictionDetails"></div>
+            </div>
+            <div class="factors-section">
+              <h3>Key Influencing Factors</h3>
+              <div id="factorsContainer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>ForesightGPT &copy; 2025 | <a href="https://github.com/ThatSINEWAVE/ForesightGPT" target="_blank">GitHub</a>
+        </p>
+        <p>Made by <a href="https://github.com/ThatSINEWAVE" target="_blank">ThatSINEWAVE</a>
+        </p>
+        <p class="disclaimer">This tool uses OpenAI's API to generate predictions. Results should be considered as estimates and not absolute certainties.</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="chart.min.js"></script>
+  </body>
+</html>
