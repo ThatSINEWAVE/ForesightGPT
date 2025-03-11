@@ -45,6 +45,40 @@ ForesightGPT is a web-based prediction tool that leverages OpenAI's GPT models t
 - No data is sent to any servers except directly to OpenAI's API
 - All processing happens in your browser
 
+## Obtaining an OpenAI API Token
+
+To use ForesightGPT, you need a valid OpenAI API key with an active payment method to avoid quota errors. Follow these steps to set up your API key properly:
+
+### Step 1: Create an OpenAI Account
+
+1. Go to [OpenAI's website](https://platform.openai.com/signup).
+2. Sign up using your email, Google, or Microsoft account.
+3. Verify your email address and log in.
+
+### Step 2: Generate an API Key
+
+1. Once logged in, navigate to the [API Keys page](https://platform.openai.com/api-keys).
+2. Click **Create a new secret key** and copy it.
+   - Store this key securely, as it will not be shown again.
+
+### Step 3: Add a Payment Method
+
+1. Go to [Billing](https://platform.openai.com/account/billing).
+2. Click **Set up payment method** and enter your credit/debit card details.
+3. OpenAI requires an active payment method to continue using the API beyond the free trial quota.
+
+### Step 4: Check Your Usage & Limits
+
+1. Visit the [Usage page](https://platform.openai.com/account/usage) to monitor your token consumption.
+2. If you exceed your quota, you may need to increase your **soft limit** or add more funds in the [Limits section](https://platform.openai.com/account/billing/limits).
+
+### Step 5: Use Your API Key in ForesightGPT
+
+1. Open ForesightGPT and enter your API key in the settings.
+2. Ensure your key is valid and has sufficient quota to avoid errors.
+
+**Tip:** OpenAI may grant a free trial with limited credits. Once used up, you'll need to switch to a paid plan to continue making API requests.
+
 ## Installation for Local Development
 
 1. Clone the repository:
