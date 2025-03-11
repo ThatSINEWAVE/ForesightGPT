@@ -6,6 +6,6 @@
 
 A web-based simulation tool that leverages OpenAI's API to generate probabilistic outcomes based on user-defined parameters.
  
-**Live Demo:** [Monte Carlo Engine](https://thatsinewave.github.io/ForesightGPT)
+**[Live Demo Here](https://thatsinewave.github.io/ForesightGPT)**
 
 </div>
